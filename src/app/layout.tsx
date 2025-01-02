@@ -7,14 +7,10 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-// const geistMono = Inter_Mono({
-//   variable: "--font-geist-mono",
-//   subsets: ["latin"],
-// });
-
 export const metadata: Metadata = {
   title: "It's Nadya!",
   description: "portofolio website of Nadya",
+  icons: "favicon.ico"
 };
 
 export default function RootLayout({
