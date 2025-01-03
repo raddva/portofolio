@@ -1,25 +1,11 @@
 "use client";
 
-import { useState, useEffect } from "react";
+interface TogglerProps {
+    darkMode: boolean;
+    setDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
+}
 
-export default function Toggler() {
-    const [darkMode, setDarkMode] = useState(true);
-
-    useEffect(() => {
-        const theme = localStorage.getItem("theme");
-        if (theme == 'dark') setDarkMode(true);
-    }, []);
-
-    useEffect(() => {
-        if (darkMode) {
-            document.documentElement.classList.add("dark");
-            localStorage.setItem("theme", "dark");
-        } else {
-            document.documentElement.classList.remove("dark");
-            localStorage.setItem("theme", "light");
-        }
-    }, [darkMode]);
-
+export default function Toggler({ darkMode, setDarkMode }: TogglerProps) {
     return (
         <label className="inline-flex items-center relative">
             <input
@@ -54,3 +40,4 @@ export default function Toggler() {
         </label>
     );
 }
+

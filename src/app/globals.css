@@ -35,7 +35,9 @@ html.dark body {
 }
 
 .animate-scroll-left:hover,
-.animate-scroll-right:hover {
+.animate-scroll-right:hover,
+.animate-scroll-right-mobile:hover,
+.animate-scroll-left-mobile:hover {
   animation-play-state: paused;
 }
 
@@ -90,7 +92,7 @@ html.dark body {
 .form__field:not(:placeholder-shown) ~ .form__label {
   font-size: 12px;
   top: 0;
-  color: #38caef;
+  color: #62b6ee;
   font-weight: 700;
 }
 

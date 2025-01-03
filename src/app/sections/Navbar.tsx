@@ -11,6 +11,10 @@ const Navbar = () => {
         setIsMenuOpen(!isMenuOpen);
     };
 
+    const closeMenu = () => {
+        setIsMenuOpen(false);
+    };
+
     return (
         <nav className="bg-transparent fixed w-full z-20 top-0 border-b border-transparent">
             <div className="max-w-screen-xl flex items-center justify-between mx-auto p-4">
@@ -77,7 +81,7 @@ const Navbar = () => {
 
                 <div
                     className={`${isMenuOpen ? "block" : "hidden"
-                        } absolute md:relative top-14 right-4 md:top-auto md:right-auto bg-transparent shadow-lg p-4 rounded-lg md:bg-transparent md:dark:bg-transparent md:shadow-none md:p-0 md:rounded-none items-center justify-between md:flex w-64 md:w-auto`}
+                        } absolute md:relative top-14 right-4 md:top-auto lg:left-1/3 md:left-36 bg-transparent shadow-lg p-4 rounded-lg md:shadow-none md:p-0 md:rounded-none items-center justify-between md:flex md:justify-end md:w-auto w-64`}
                     id="navbar-sticky"
                 >
                     <ul className="flex flex-col space-y-4 md:space-y-0 md:flex-row md:space-x-8">
@@ -95,6 +99,7 @@ const Navbar = () => {
                                     duration={500}
                                     offset={-70}
                                     className="block py-2 px-3 text-black relative group rounded hover:text-[#62b6ee] md:hover:text-[#62b6ee] md:p-0 md:dark:hover:text-[#62b6ee] dark:text-white dark:hover:text-white cursor-default"
+                                    onClick={closeMenu}
                                 >
                                     {item.name}
                                     <span className="absolute bottom-0 left-1/2 w-0 h-[2px] bg-[#62b6ee] transition-all duration-300 ease-[cubic-bezier(0.25,0.8,0.25,1)] group-hover:w-full group-hover:left-0"></span>

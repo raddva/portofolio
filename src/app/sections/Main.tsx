@@ -6,13 +6,17 @@ import { Icon } from '@iconify/react';
 import Swal from "sweetalert2";
 import "sweetalert2/dist/sweetalert2.min.css";
 
-export default function Main() {
+interface MainProps {
+    darkMode: boolean;
+}
+
+export default function Main({ darkMode }: MainProps) {
     const frameworks = [
         { id: 1, image: '/resources/logo/bootstrap.png', title: 'Bootstrap', description: 'CSS Framework', link: 'https://getbootstrap.com/' },
-        { id: 2, image: '/resources/logo/codeigniter.svg', title: 'Codeigniter 4', description: 'PHP Framework', link: 'https://www.codeigniter.com/' },
+        { id: 2, image: '/resources/logo/codeigniter.png', title: 'Codeigniter', description: 'PHP Framework', link: 'https://www.codeigniter.com/' },
         { id: 3, image: '/resources/logo/laravel.png', title: 'Laravel', description: 'PHP Framework', link: 'https://laravel.com/' },
         { id: 4, image: '/resources/logo/angular.png', title: 'Angular', description: 'Javascript Framework', link: 'https://angular.dev/' },
-        { id: 5, image: '/resources/logo/next-js.svg', title: 'NextJS', description: 'ReactJS Framework', link: 'https://nextjs.org/' },
+        { id: 5, image: '/resources/logo/next-js.png', title: 'NextJS', description: 'ReactJS Framework', link: 'https://nextjs.org/', dark: '/resources/logo/next-js-white.png' },
         { id: 6, image: '/resources/logo/tailwindcss.png', title: 'Tailwind CSS', description: 'CSS Framework', link: 'https://tailwindcss.com/' },
         { id: 7, image: '/resources/logo/flutter.png', title: 'Flutter', description: 'Dart Framework for Mobile Applications', link: 'https://flutter.dev/' },
         { id: 7, image: '/resources/logo/react-js.png', title: 'ReactJS', description: 'Javascript Framework', link: 'https://react.dev/' },
@@ -77,7 +81,7 @@ export default function Main() {
     };
     return (
         <div className="mt-52">
-            <section id="home" className="py-12">
+            <section id="home" className="py-12 mb-32">
                 <div className="container mx-auto flex flex-col lg:flex-row justify-evenly items-center w-full h-full">
                     <div className="relative flex-shrink-0 w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 mx-auto lg:mx-0">
                         <Image
@@ -96,7 +100,7 @@ export default function Main() {
                         <h2 className="text-4xl md:text-3xl lg:text-4xl font-bold text-black dark:text-gray-100 flex justify-center lg:justify-start items-center">
                             I am
                             <span
-                                className="ml-2 text-4xl md:text-3xl lg:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#00bcf2] to-[#00b294] animate-typing border-r-2 border-white whitespace-nowrap overflow-hidden"
+                                className="ml-2 text-4xl md:text-3xl lg:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#00bcf2] to-[#00b294] animate-typing-mobile md:animate-typing lg:animate-typing border-r-2 border-white whitespace-nowrap overflow-hidden"
                             >
                                 Nadya.
                             </span>
@@ -113,7 +117,7 @@ export default function Main() {
             </section>
 
             <section id="about" className="py-12">
-                <div className="inline-flex items-center justify-center w-full mt-32 mb-28">
+                <div className="inline-flex items-center justify-center w-full mb-28">
                     <hr className="w-80 h-1 my-8 bg-black border-0 rounded dark:bg-white" />
                     <div className="absolute px-4 -translate-x-1/2 bg-white left-1/2 dark:bg-black">
                         <svg className="w-4 h-4 text-black dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 14">
@@ -184,7 +188,7 @@ export default function Main() {
                 </div>
             </section>
 
-            <section id="skills" className="py-12">
+            <section id="skills" className="py-24">
                 <div className="inline-flex items-center justify-center w-full mt-4 mb-14">
                     <hr className="w-80 h-1 my-8 bg-black border-0 rounded dark:bg-white" />
                     <div className="absolute px-4 -translate-x-1/2 bg-white left-1/2 dark:bg-black">
@@ -203,30 +207,31 @@ export default function Main() {
                         </p>
                     </div>
 
-                    <div className="relative w-screen py-2">
+                    <div className="relative w-screen lg:w-full py-2">
                         <div className="absolute top-0 left-0 h-full w-20 bg-gradient-to-r from-white dark:from-black to-transparent pointer-events-none z-10" />
                         <div className="absolute top-0 right-0 h-full w-20 bg-gradient-to-l from-white dark:from-black to-transparent pointer-events-none z-10" />
                         <div className="overflow-hidden">
-                            <div
-                                className="flex space-x-4 animate-scroll-left"
-                            >
+                            <div className="flex space-x-4 animate-scroll-left-mobile lg:animate-scroll-left">
                                 {[...languages, ...languages].map((lang, index) => (
                                     <a
                                         href={lang.link}
                                         target="_blank"
                                         key={index}
-                                        className="flex-shrink-0 w-[300px] sm:w-[320px] h-[180px] sm:h-[200px] rounded-lg overflow-hidden bg-transparent shadow transition-transform transform hover:scale-105 hover:shadow-[0px_4px_20px_rgba(255,215,0,0.6)]"
+                                        className="flex-shrink-0 w-[220px] h-[120px] sm:w-[250px] sm:h-[140px] rounded-lg overflow-hidden bg-transparent shadow transition-transform transform hover:scale-100 hover:shadow-lg hover:shadow-gray-400 flex border border-gray-200 dark:border-gray-800"
                                     >
-                                        <Image
-                                            src={lang.image}
-                                            alt={lang.title}
-                                            width={800}
-                                            height={500}
-                                            className="absolute w-full h-2/3 object-cover"
-                                        />
-                                        <div className="absolute bottom-0 w-full p-4 bg-transparent">
-                                            <h3 className="text-md font-bold text-black dark:text-white">{lang.title}</h3>
-                                            <p className="text-sm text-gray-700 dark:text-gray-300 mt-1">{lang.description}</p>
+                                        <div className="relative w-[55%] h-full">
+                                            <Image
+                                                src={lang.image}
+                                                alt={lang.title}
+                                                width={500}
+                                                height={500}
+                                                className="absolute top-0 left-0 w-full h-full object-cover"
+                                            />
+                                        </div>
+
+                                        <div className="flex flex-col justify-center w-[45%] p-3 bg-transparent">
+                                            <h3 className="text-sm font-bold text-black dark:text-white">{lang.title}</h3>
+                                            <p className="text-xs text-gray-700 dark:text-gray-300 mt-1">{lang.description}</p>
                                         </div>
                                     </a>
                                 ))}
@@ -234,26 +239,27 @@ export default function Main() {
                         </div>
 
                         <div className="overflow-hidden mt-8">
-                            <div
-                                className="flex space-x-4 animate-scroll-right"
-                            >
+                            <div className="flex space-x-4 animate-scroll-right-mobile lg:animate-scroll-right">
                                 {[...frameworks, ...frameworks].map((fw, index) => (
                                     <a
                                         href={fw.link}
                                         target="_blank"
                                         key={index}
-                                        className="flex-shrink-0 w-[300px] sm:w-[320px] h-[180px] sm:h-[200px] rounded-lg overflow-hidden bg-transparent shadow transition-transform transform hover:scale-105 hover:shadow-[0px_4px_20px_rgba(255,215,0,0.6)]"
+                                        className="flex-shrink-0 w-[220px] h-[120px] sm:w-[250px] sm:h-[140px] rounded-lg overflow-hidden bg-transparent shadow transition-transform transform hover:scale-100 hover:shadow-lg hover:shadow-gray-400 flex border border-gray-200 dark:border-gray-800"
                                     >
-                                        <Image
-                                            src={fw.image}
-                                            alt={fw.title}
-                                            width={800}
-                                            height={500}
-                                            className="absolute w-full h-2/3 object-cover"
-                                        />
-                                        <div className="absolute bottom-0 w-full p-4 bg-transparent">
-                                            <h3 className="text-md font-bold text-gray-900 dark:text-white">{fw.title}</h3>
-                                            <p className="text-sm text-gray-700 dark:text-gray-300 mt-1">{fw.description}</p>
+                                        <div className="relative w-[55%] h-full">
+                                            <Image
+                                                src={fw.dark && darkMode ? fw.dark : fw.image}
+                                                alt={fw.title}
+                                                width={300}
+                                                height={300}
+                                                className="absolute top-0 left-0 w-full h-full object-cover"
+                                            />
+                                        </div>
+
+                                        <div className="flex flex-col justify-center w-[45%] p-3 bg-transparent">
+                                            <h3 className="text-sm font-bold text-black dark:text-white">{fw.title}</h3>
+                                            <p className="text-xs text-gray-700 dark:text-gray-300 mt-1">{fw.description}</p>
                                         </div>
                                     </a>
                                 ))}
@@ -327,7 +333,7 @@ export default function Main() {
             </section>
 
             <section id="contact">
-                <div className="inline-flex items-center justify-center w-full mt-28 mb-14">
+                <div className="inline-flex items-center justify-center w-full mt-4 mb-14">
                     <hr className="w-80 h-1 my-8 bg-black border-0 rounded dark:bg-white" />
                     <div className="absolute px-4 -translate-x-1/2 bg-white left-1/2 dark:bg-black">
                         <svg className="w-4 h-4 text-black dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 14">
@@ -339,11 +345,9 @@ export default function Main() {
                 {/* Contacts */}
                 <div className="container mx-auto px-4">
                     <div className="isolate py-1">
-                        <div className="mx-auto max-w-2xl text-center">
-                            <h2 className="text-balance text-4xl font-semibold tracking-tight text-black dark:text-white sm:text-5xl">
-                                Contact me
-                            </h2>
-                            <p className="mt-2 text-lg text-black dark:text-white">For more.</p>
+                        <div className="text-center mb-10">
+                            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-gray-100">Contact Me</h2>
+                            <p className="text-gray-700 dark:text-gray-300 mt-2">For more.</p>
                         </div>
                         <form
                             ref={formRef}
@@ -359,9 +363,9 @@ export default function Main() {
                                 <input
                                     type="text"
                                     className="form__field w-full"
-                                    placeholder="Your Name"
                                     name="sender"
                                     id="sender"
+                                    placeholder=""
                                     required
                                 />
                                 <label htmlFor="sender" className="form__label">
@@ -372,9 +376,9 @@ export default function Main() {
                                 <input
                                     type="email"
                                     className="form__field w-full"
-                                    placeholder="Your Email"
                                     name="email"
                                     id="email"
+                                    placeholder=""
                                     required
                                 />
                                 <label htmlFor="email" className="form__label">
@@ -384,8 +388,8 @@ export default function Main() {
                             <div className="form__group field">
                                 <textarea
                                     className="form__field w-full"
-                                    placeholder="Your Message"
                                     name="message"
+                                    placeholder=""
                                     id="message"
                                     required
                                 ></textarea>
@@ -396,7 +400,7 @@ export default function Main() {
                             <div>
                                 <button
                                     type="submit"
-                                    className="block w-full rounded-md bg-gradient-to-r from-[#62b6ee] to-[#38caef] px-4 py-3 text-center text-sm font-semibold text-white shadow-md hover:bg-gradient-to-r hover:from-transparent hover:to-transparent border border-transparent hover:border-[#62b6ee] hover:text-[#62b6ee] sm:text-lg"
+                                    className="block w-full rounded-md bg-transparent border-black dark:border-white text-black px-4 py-3 text-center text-sm font-medium dark:text-white hover:bg-gradient-to-r hover:from-transparent hover:to-transparent border hover:border-[#62b6ee] hover:text-[#62b6ee] dark:hover:border-[#62b6ee] dark:hover:text-[#62b6ee] sm:text-lg"
                                 >
                                     Submit
                                 </button>

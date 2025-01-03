@@ -17,9 +17,13 @@ export default {
         "spin-slow": "spin-slow 3s linear infinite",
         "spin-reverse": "spin-reverse 3s linear infinite",
         typing: "typing 2s steps(20) infinite alternate, blink 3s infinite",
+        "typing-mobile":
+          "typing-mobile 2s steps(10) infinite alternate, blink 3s infinite",
         "infinite-scroll": "infinite-scroll 20s linear infinite",
         "scroll-left": "scroll-left 25s linear infinite",
         "scroll-right": "scroll-right 25s linear infinite",
+        "scroll-left-mobile": "scroll-left 15s linear infinite",
+        "scroll-right-mobile": "scroll-right 15s linear infinite",
         paused: "paused",
       },
       keyframes: {
@@ -39,6 +43,10 @@ export default {
           "100%": {
             width: "6ch",
           },
+        },
+        "typing-mobile": {
+          "0%": { width: "0%", visibility: "hidden" },
+          "100%": { width: "2.8ch" },
         },
         blink: {
           "0%": {
