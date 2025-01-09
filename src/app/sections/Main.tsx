@@ -18,20 +18,21 @@ export default function Main({ darkMode }: MainProps) {
         { id: 4, image: '/resources/logo/angular.png', title: 'Angular', description: 'Javascript Framework', link: 'https://angular.dev/' },
         { id: 5, image: '/resources/logo/next-js.png', title: 'NextJS', description: 'ReactJS Framework', link: 'https://nextjs.org/', dark: '/resources/logo/next-js-white.png' },
         { id: 6, image: '/resources/logo/tailwindcss.png', title: 'Tailwind CSS', description: 'CSS Framework', link: 'https://tailwindcss.com/' },
-        { id: 7, image: '/resources/logo/flutter.png', title: 'Flutter', description: 'Dart Framework for Mobile Applications', link: 'https://flutter.dev/' },
+        { id: 7, image: '/resources/logo/flutter.png', title: 'Flutter', description: 'Open-source Software Development Kit (SDK) from Google', link: 'https://flutter.dev/' },
         { id: 7, image: '/resources/logo/react-js.png', title: 'ReactJS', description: 'Javascript Framework', link: 'https://react.dev/' },
     ];
 
     const languages = [
-        { id: 1, image: '/resources/logo/javascript.png', title: 'Javascript', description: 'JS', link: 'https://www.w3schools.com/js/' },
-        { id: 2, image: '/resources/logo/php.png', title: 'PHP', description: 'PHP', link: 'https://www.w3schools.com/php/' },
-        { id: 3, image: '/resources/logo/typescript.svg', title: 'Typescript', description: 'JS but Cooler', link: 'https://www.w3schools.com/typescript/' },
-        { id: 4, image: '/resources/logo/python.png', title: 'Python', description: 'Snake', link: 'https://www.w3schools.com/python/' },
-        { id: 5, image: '/resources/logo/dart.png', title: 'Dart', description: 'Dart', link: 'https://dart.dev/' },
+        { id: 1, image: '/resources/logo/javascript.png', title: 'Javascript', description: 'A programming language and core technology of the Web', link: 'https://www.w3schools.com/js/' },
+        { id: 2, image: '/resources/logo/php.png', title: 'PHP', description: 'A widely-used, open source scripting language', link: 'https://www.w3schools.com/php/' },
+        { id: 3, image: '/resources/logo/typescript.svg', title: 'Typescript', description: 'Strongly typed programming language that builds on JavaScript', link: 'https://www.w3schools.com/typescript/' },
+        { id: 4, image: '/resources/logo/python.png', title: 'Python', description: 'Interpreted, Interactive, Object-oriented Programming Language', link: 'https://www.w3schools.com/python/' },
+        { id: 5, image: '/resources/logo/dart.png', title: 'Dart', description: 'A client-optimized language for developing fast apps on any platform', link: 'https://dart.dev/' },
+        { id: 6, image: '/resources/logo/mysql.png', title: 'MySQL', description: 'Relational Database Management System (RDBMS)', link: 'https://www.mysql.com/' },
     ];
 
     const apps = [
-        { id: 1, image: '/resources/works/elibrary.png', title: 'E-Library Book Rent App', description: 'Mobile App - Flutter Dart', link: '#' },
+        { id: 1, image: '/resources/works/elibrary.png', title: 'E-Library Book Rent', description: 'Mobile App - Flutter', link: '#' },
         { id: 1, image: '/resources/works/dataset.png', title: 'Dashboard Analytics', description: 'Dataset Analytics - Python', link: 'https://nadya-bikesharing.streamlit.app/' },
     ];
 
@@ -133,14 +134,14 @@ export default function Main({ darkMode }: MainProps) {
                             <div className="absolute w-20 md:w-24 h-[130%] bg-gradient-to-b from-[#e19c4d] via-[#aa362b] to-[#62b6ee] animate-spin-slow rounded-full"></div>
                             <div className="relative w-full h-full bg-[#b1a9ae] dark:bg-[#5b5456] inset-1 rounded-full flex flex-col items-center justify-center z-10 overflow-hidden">
                                 <Image
-                                    src="/resources/images/profile.jpeg"
+                                    src="/resources/images/3.jpg"
                                     alt="Profile"
                                     className="rounded-full object-cover w-full h-full group-hover:scale-100 transition-transform duration-300"
                                     width={200}
                                     height={200}
                                 />
                                 <div className="absolute bottom-0 left-0 w-full bg-transparent text-center p-3 text-white translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                                    <h1 className="text-white drop-shadow-md">Nadya</h1>
+                                    <h1 className="text-black">Nadya</h1>
                                 </div>
                             </div>
                         </div>
@@ -151,7 +152,9 @@ export default function Main({ darkMode }: MainProps) {
                             About Me!
                         </h3>
                         <p className="text-sm sm:text-base lg:text-md text-black dark:text-gray-300 leading-relaxed">
-                            Passionate in both front-end and back-end development, I am capable of building complete web applications from start to finish. I work on client-facing interfaces, ensuring a seamless user experience, while also managing server-side logic, databases, and application architecture to maintain robust functionality. My proficiency in various programming languages, frameworks, and tools enables me to bridge the gap between design and engineering, ensuring comprehensive and efficient digital solutions.
+                            Passionate in both front-end and back-end development, I am capable of building complete web applications from start to finish.
+                            Working on client-facing interfaces, ensuring a seamless user experience, while also managing server-side logic, databases, and application architecture to maintain robust functionality.
+                            My proficiency in various programming languages, frameworks, and tools enables me to bridge the gap between design and engineering, ensuring comprehensive and efficient digital solutions.
                         </p>
                     </div>
                 </div>
@@ -203,7 +206,7 @@ export default function Main({ darkMode }: MainProps) {
                     <div className="text-center mb-10">
                         <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100">Skills</h2>
                         <p className="text-gray-700 dark:text-gray-300 mt-2">
-                            Some programming languages and frameworks I excel in.
+                            Some programming languages and frameworks I am skilled in.
                         </p>
                     </div>
 
